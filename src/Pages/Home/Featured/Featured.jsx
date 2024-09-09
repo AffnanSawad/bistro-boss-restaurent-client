@@ -26,8 +26,8 @@ const Featured = () => {
 
     <div className="md:ml-10">
         <p> Aug 27 , 2024 </p>
-        <p className=" uppercase">Where Can I Get Some</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, laudantium.</p>
+        <p className=" uppercase">Where Can I Get Some?</p>
+        <p>You can get foods here.There are many kinds of foods such as soups,pizza,desserts,salad.</p>
        <Link to='menu'>  <button className="btn  my-5 btn-error text-white">Order Now</button>   </Link>
 
     </div>

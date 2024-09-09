@@ -1,30 +1,16 @@
-import { useEffect, useState } from "react";
+
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
-import { json } from "react-router-dom";
 import MenuItem from "../MenuItem/MenuItem";
+import useMenu from "../../../hooks/useMenu";
+import { Link } from "react-router-dom";
 
 
 const PopularMenu = () => {
+    
+    // CustomHook theke ana hoise = useMenu
+  const [menus] = useMenu();
+  const popular = menus.filter(item => item.category === 'popular')
 
-    const [menus,setmenus] = useState([]);
-
-    // fetching from menu.json to show menus
-
-    useEffect( 
-        ()=>{
-
-            fetch('menu.json')
-            .then( res=> res.json())
-
-            .then( data=>{
-
-                const popularItems = data.filter(item => item.category === 'popular')
-
-                setmenus(popularItems)
-            })
-        }
-        
-        ,[])
 
 
 
@@ -40,7 +26,7 @@ const PopularMenu = () => {
 
     <div className="grid md:grid-cols-2 gap-10 my-4">
         {
-            menus.map(item => <MenuItem
+            popular.map(item => <MenuItem
             
                 key={item._id}
                 item={item}
@@ -50,7 +36,9 @@ const PopularMenu = () => {
     </div>
     
     {/* button */}
-    <button className="btn btn-outline border-0 border-b-4 mt-4">View Full Menu</button>
+   <Link to='/menu'>
+   <button className="btn btn-outline border-0 border-b-4 mt-4">View Full Menu</button>
+   </Link>
 
     
 

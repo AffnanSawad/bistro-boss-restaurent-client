@@ -1,8 +1,20 @@
-
+import { Helmet } from "react-helmet-async";
+import Cover from "../Cover/Cover";
+import pic from "../../../assets/contact/banner.jpg"
 
 const Contact = () => {
     return (
         <div className="overflow-x-auto mt-10 mb-20">
+
+          <Cover image={pic} title={"Contact"}></Cover>
+
+            {/* helmet */}
+            <Helmet>
+                <title>Contact</title>
+            </Helmet>
+            {/* helmet */}
+
+
         <table className="table mt-20 mb-20 ">
           {/* head */}
           <thead >

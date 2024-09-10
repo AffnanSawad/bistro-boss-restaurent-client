@@ -8,7 +8,7 @@ const MenuCategory = ({items}) => {
             
         {/* mapping to show cards */}
 
-    <div className="grid md:grid-cols-2 gap-10 my-4">
+    <div className="grid  md:grid-cols-2   gap-10 my-4">
         {
             items.map(item => <MenuItem
             

@@ -5,7 +5,7 @@ const MenuItem = ({item}) => {
 
 
     return (
-        <div className="flex space-x-5">
+        <div className="flex space-x-5 md:grid-cols-2">
             <img className="w-[120px] rounded-full" src={image} alt="" />
            
             <div >

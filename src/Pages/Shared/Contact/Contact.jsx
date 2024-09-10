@@ -4,7 +4,7 @@ import pic from "../../../assets/contact/banner.jpg"
 
 const Contact = () => {
     return (
-        <div className="overflow-x-auto mt-10 mb-20">
+        <div className="overflow-x-auto  mb-20">
 
           <Cover image={pic} title={"Contact"}></Cover>
 
@@ -15,7 +15,7 @@ const Contact = () => {
             {/* helmet */}
 
 
-        <table className="table mt-20 mb-20 ">
+        <table className="table mt-20 max-w-7xl mx-auto mb-20 ">
           {/* head */}
           <thead >
             <tr>

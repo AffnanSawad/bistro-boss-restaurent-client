@@ -7,6 +7,7 @@ import Main from "../LayOut/Main";
 import Home from "../Pages/Home/Home/Home";
 import Contact from "../Pages/Shared/Contact/Contact";
 import Menu from "../Pages/Menu/Menu/Menu";
+import Order from "../Pages/Order/Order/Order";
  
 
   
@@ -28,6 +29,10 @@ import Menu from "../Pages/Menu/Menu/Menu";
         {
             path: 'menu',
             element: <Menu></Menu>
+        },
+        {
+          path: 'order',
+          element: <Order></Order>
         }
 
 

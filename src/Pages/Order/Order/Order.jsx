@@ -45,10 +45,10 @@ const Order = () => {
   </TabList>
   <TabPanel>
     
-    <div className="grid mx-3   grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+    <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     {
     salad.map(item=><FoodCard
-    
+     
       key={item._id}
     item={item}
     
@@ -61,7 +61,7 @@ const Order = () => {
 
 
   <TabPanel>
-  <div className="grid mx-5 md:grid-cols-3 gap-10">
+  <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     {
     pizza.map(item=><FoodCard
     
@@ -75,7 +75,7 @@ const Order = () => {
 
 
   <TabPanel>
-  <div className="grid mx-5 md:grid-cols-3 gap-10">
+  <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     {
     soup.map(item=><FoodCard
     
@@ -89,7 +89,7 @@ const Order = () => {
 
 
   <TabPanel>
-  <div className="grid mx-5 md:grid-cols-3 gap-10">
+  <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     {
     dessert.map(item=><FoodCard
     

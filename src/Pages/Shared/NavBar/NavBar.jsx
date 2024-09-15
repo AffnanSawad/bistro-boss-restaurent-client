@@ -10,6 +10,8 @@ const NavBar = () => {
     <li className="font-bold">  <Link to='/contact'>  Contact  </Link>  </li>
     <li className="font-bold">  <Link to='/menu'>  Our Menu  </Link>  </li>
     <li className="font-bold">  <Link to='/order'>  Order Food  </Link>  </li>
+    <li className="font-bold">  <Link to='/login'>  Login  </Link>  </li>
+    <li className="font-bold">  <Link to='/signup'> Signup  </Link>  </li>
    
     
     

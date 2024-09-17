@@ -8,8 +8,10 @@ import Home from "../Pages/Home/Home/Home";
 import Contact from "../Pages/Shared/Contact/Contact";
 import Menu from "../Pages/Menu/Menu/Menu";
 import Order from "../Pages/Order/Order/Order";
-import Login from "../Pages/Login/Login";
-import Signup from "../Pages/Signup/Signup";
+import Login from "../Login/Login";
+import Signup from "../Signup/Signup";
+
+
  
 
   
@@ -34,7 +36,7 @@ import Signup from "../Pages/Signup/Signup";
         },
         {
           path: 'order',
-          element: <Order></Order>
+          element:  <Order></Order> 
         },
         {
           path: 'login',
@@ -44,6 +46,7 @@ import Signup from "../Pages/Signup/Signup";
           path: 'signup',
           element: <Signup></Signup>
         },
+       
 
 
       ]

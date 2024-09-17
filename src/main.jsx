@@ -9,18 +9,19 @@ import {
 } from "react-router-dom";
 import { router } from './Routes/Routes';
 import { HelmetProvider } from 'react-helmet-async';
-import AuthProvider from './providers/AuthProvider';
+import AuthProviders from './providers/AuthProviders';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     
     
      {/*AuthProvider  */}
-   <AuthProvider>
-    
-    
-     {/* React Helmet Async */}
-     <HelmetProvider>
+ 
+    <AuthProviders>
+
+    {/* React Helmet Async */}
+    <HelmetProvider>
     
     <RouterProvider router={router} />
  
@@ -28,7 +29,10 @@ createRoot(document.getElementById('root')).render(
 
   {/* End React Helmet Async */}
 
-</AuthProvider>
+
+    </AuthProviders>
+
+
 
 
   </StrictMode>,

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 import auth from "../../../firebase/firebase.config";
+import Swal from "sweetalert2";
 
 
 const NavBar = () => {
@@ -15,7 +16,14 @@ const NavBar = () => {
     logOut(auth)
     .then(() => {
 
-        console.log("log out successfully")
+        console.log("log out successfully");
+        
+        // swal
+        Swal.fire({
+          title: "  Logged Out!",
+          text: "You Are Successfully Logged Out!",
+          icon: "success"
+        });
     })
 
     .catch(error=>{
@@ -30,9 +38,10 @@ const NavBar = () => {
     <li className="font-bold">  <Link to='/contact'>  Contact  </Link>  </li>
     <li className="font-bold">  <Link to='/menu'>  Our Menu  </Link>  </li>
     <li className="font-bold">  <Link to='/order'>  Order Food  </Link>  </li>
-    <li className="font-bold">  <Link to='/login'>  Login  </Link>  </li>
-    <li className="font-bold">  <Link to='/signup'> Signup  </Link>  </li>
-   
+    {/* <li className="font-bold">  <Link to='/login'>  Login  </Link>  </li>
+    <li className="font-bold">  <Link to='/signup'> Signup  </Link>  </li> */}
+    <li className="font-bold">  <Link to='/secret'> Secret  </Link>  </li>
+    
     
     
     </>
@@ -84,13 +93,22 @@ const NavBar = () => {
                 user ? <>
                 
                 <span className="mx-5"> {user.email} </span>
+                
+                
+
                 <a  onClick={handleLogOut} className="btn btn-error text-white">Log Out </a>
                 
                 
                 </>
                 :
 
-                <Link to='/login'>  <button className="btn btn-accent text-white">Log In</button> </Link>
+              <>
+              
+              <Link to='/login'>  <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5">Log In</button> </Link>
+
+              <Link to='/signup'>  <button className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-4">Sign Up</button> </Link>
+              
+              </>
 
 
               }

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const Signup = () => {
@@ -32,6 +33,12 @@ const handleSignup = e => {
 
         // form reset
         e.target.reset();
+
+        Swal.fire({
+          title: " Registered In!",
+          text: "You Are Successfully Registered !",
+          icon: "success"
+        });
        
     //    navigate
         navigate('/');

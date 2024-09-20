@@ -11,6 +11,16 @@ import { router } from './Routes/Routes';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProviders from './providers/AuthProviders';
 
+// ten - stack query
+import {
+  QueryClient,
+  QueryClientProvider,
+ 
+} from '@tanstack/react-query'
+
+
+const queryClient = new QueryClient()
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,7 +30,10 @@ createRoot(document.getElementById('root')).render(
  
     <AuthProviders>
 
-    {/* React Helmet Async */}
+    <QueryClientProvider client={queryClient}>
+      
+      
+       {/* React Helmet Async */}
     <HelmetProvider>
     
     <RouterProvider router={router} />
@@ -28,6 +41,11 @@ createRoot(document.getElementById('root')).render(
     </HelmetProvider>
 
   {/* End React Helmet Async */}
+   
+   
+    </QueryClientProvider>
+
+   
 
 
     </AuthProviders>

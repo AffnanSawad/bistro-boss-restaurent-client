@@ -1,14 +1,21 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProviders";
 import auth from "../../../firebase/firebase.config";
 import Swal from "sweetalert2";
+import { FaCartShopping } from "react-icons/fa6";
+import useCart from "../../../hooks/useCart";
 
 
 const NavBar = () => {
 
   // import context
   const {user,logOut} = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  // use cart => cart er number
+  const [cart] = useCart();
 
    // handle logOut
    const handleLogOut = ()=> {
@@ -29,6 +36,9 @@ const NavBar = () => {
     .catch(error=>{
         console.log(error.message)
     })
+
+    navigate('/')
+    
 }
 
  
@@ -41,7 +51,20 @@ const NavBar = () => {
     {/* <li className="font-bold">  <Link to='/login'>  Login  </Link>  </li>
     <li className="font-bold">  <Link to='/signup'> Signup  </Link>  </li> */}
     <li className="font-bold">  <Link to='/secret'> Secret  </Link>  </li>
-    
+      
+      <li>   <Link to='/'>
+      
+      
+      <button className="btn">
+     
+     {/* shopping card icon  */}
+      <FaCartShopping className="mr-4" />
+
+  <div className="badge badge-secondary">+{cart.length} </div>
+</button>
+
+
+</Link> </li>
     
     
     </>

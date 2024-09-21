@@ -52,7 +52,11 @@ const NavBar = () => {
     <li className="font-bold">  <Link to='/signup'> Signup  </Link>  </li> */}
     <li className="font-bold">  <Link to='/secret'> Secret  </Link>  </li>
       
-      <li>   <Link to='/'>
+    
+    
+      {/* dashboard => cart */}
+      
+      <li>   <Link to='/dashboard/cart'>
       
       
       <button className="btn">
@@ -65,6 +69,8 @@ const NavBar = () => {
 
 
 </Link> </li>
+
+
     
     
     </>
@@ -119,7 +125,7 @@ const NavBar = () => {
                 
                 
 
-                <a  onClick={handleLogOut} className="btn btn-error text-white">Log Out </a>
+                <a  onClick={handleLogOut} className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5  text-center py-4">Log Out </a>
                 
                 
                 </>

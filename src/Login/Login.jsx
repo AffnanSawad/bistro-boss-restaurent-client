@@ -121,7 +121,7 @@ const handleGoogleLogin = ()=>{
             </form>
 
             <hr />
-            <p className="font-bold mx-10 mb-10">New Here? <Link to="/signup">Please Register First</Link> </p>
+            <p className="font-bold mx-10 mb-10 underline">New Here? <Link to="/signup">Please Register First</Link> </p>
          
            
 

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 
 const Signup = () => {
@@ -11,6 +12,8 @@ const Signup = () => {
 
      // navigate = jate login korle home page e niye jai
      const navigate = useNavigate();
+    // axiosPublic  Hooks 
+    const axiosPublic = useAxiosPublic();
 
 // handle Form
 
@@ -34,14 +37,38 @@ const handleSignup = e => {
         // form reset
         e.target.reset();
 
-        Swal.fire({
-          title: " Registered In!",
-          text: "You Are Successfully Registered !",
-          icon: "success"
-        });
+           
+        
+        
+        // create user entry in the database.part-5.video-1
+           const userInfo = {
+            name: name,
+            email: email
+        }
+        axiosPublic.post('/users', userInfo)
+             
+        .then(res => {
+          if (res.data.insertedId) {
+              console.log('user added to the database')
+            
+              Swal.fire({
+                      title: " Registered In!",
+                      text: "You Are Successfully Registered !",
+                      icon: "success"
+              });
+              navigate('/');
+          }
+      })
+      
+
+    //     Swal.fire({
+    //       title: " Registered In!",
+    //       text: "You Are Successfully Registered !",
+    //       icon: "success"
+    //     });
        
-    //    navigate
-        navigate('/');
+    // //    navigate
+    //     navigate('/');
     })
 
     .catch(error=>{
@@ -94,7 +121,7 @@ const handleSignup = e => {
       </form>
 
       <hr />
-      <p className="font-bold mx-10 mb-10">Already Registered? <Link to="/login">Please Login First</Link> </p>
+      <p className="font-bold mx-10 mb-10 underline">Already Registered? <Link to="/login">Please Login First</Link> </p>
     </div>
   </div>
 </div>

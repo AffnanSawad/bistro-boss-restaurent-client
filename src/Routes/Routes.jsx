@@ -14,6 +14,7 @@ import Secret from "../Pages/Secret/Secret";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Dashboard from "../LayOut/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
  
@@ -66,7 +67,7 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
     // another section ******
     {
       path: 'dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
 
 
       children: [
@@ -74,6 +75,13 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
     {
       path: 'cart',
       element: <Cart></Cart>
+    },
+
+
+    // admit routes
+    {
+      path: 'users',
+      element: <AllUsers></AllUsers>
     }
 
 

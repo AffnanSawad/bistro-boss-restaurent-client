@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../Cover/Cover";
 import pic from "../../../assets/contact/banner.jpg"
+import CallUs from "../../Home/CallUs/CallUs";
 
 const Contact = () => {
     return (
@@ -49,6 +50,9 @@ const Contact = () => {
             </tr>
           </tbody>
         </table>
+
+      <CallUs></CallUs>
+
       </div>
     );
 };

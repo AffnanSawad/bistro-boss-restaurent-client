@@ -15,6 +15,10 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Dashboard from "../LayOut/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddItems from "../Pages/Dashboard/AddItems/AddItems";
+import AdminRoute from "./AdminRoute";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
  
@@ -76,13 +80,27 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
       path: 'cart',
       element: <Cart></Cart>
     },
+    {
+      path: 'payment',
+      element: <Payment></Payment>
+    },
+    {
+      path: 'paymentHistory',
+      element: <PaymentHistory></PaymentHistory>
+    },
 
 
     // admit routes
     {
       path: 'users',
       element: <AllUsers></AllUsers>
-    }
+    },
+
+      // admin only routes
+      {
+        path: 'addItems',
+        element: <AdminRoute>  <AddItems></AddItems>  </AdminRoute>
+      },
 
 
       ]

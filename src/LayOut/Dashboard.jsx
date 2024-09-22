@@ -32,11 +32,11 @@ const Dashboard = () => {
                                     <FaUtensils></FaUtensils>
                                     Add Items</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink to="/dashboard/manageItems">
                                     <FaListAlt></FaListAlt>
                                     Manage Items</NavLink>
-                            </li>
+                            </li> */}
                             <li>
                                 <NavLink to="/dashboard/bookings">
                                     <FaBook></FaBook>
@@ -74,6 +74,15 @@ const Dashboard = () => {
                             <FaAd></FaAd>
                             Add a Review</NavLink>
                     </li>
+                
+                    <li>
+                                    <NavLink to="/dashboard/paymentHistory">
+                                        <FaList></FaList>
+                                        Real Payment History</NavLink>
+                                </li>
+
+
+
                     <li>
                         <NavLink to="/dashboard/bookings">
                             <FaList></FaList>

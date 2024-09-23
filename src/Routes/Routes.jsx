@@ -10,7 +10,6 @@ import Menu from "../Pages/Menu/Menu/Menu";
 import Order from "../Pages/Order/Order/Order";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
-import Secret from "../Pages/Secret/Secret";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Dashboard from "../LayOut/Dashboard";
 import Cart from "../Pages/Dashboard/Cart/Cart";
@@ -19,6 +18,8 @@ import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 
 
  
@@ -55,10 +56,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
           path: 'signup',
           element: <Signup></Signup>
         },
-        {
-          path: 'secret',
-          element:   <PrivateRoute> <Secret></Secret>  </PrivateRoute> 
-        },
+       
        
 
 
@@ -75,6 +73,12 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
       children: [
+
+         // normal user routes
+         {
+          path: 'userHome',
+          element: <UserHome></UserHome>
+        },
 
     {
       path: 'cart',
@@ -97,6 +101,11 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
     },
 
       // admin only routes
+
+      {
+        path: 'adminHome',
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+      },
       {
         path: 'addItems',
         element: <AdminRoute>  <AddItems></AddItems>  </AdminRoute>

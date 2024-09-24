@@ -1,8 +1,19 @@
-# React + Vite
+Bistro Boss:
+Bistro Boss is a full-featured restaurant website where users can explore the restaurant’s menu, place orders, and manage their cart. The platform supports secure online payments via Stripe and offers additional features like a transaction history and dark mode.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
+Explore Menu: View all available food items across various categories.
+User Signup/Login: Sign up or log in to place orders.
+Add to Cart: Select items from the menu and add them to your cart.
+Manage Cart: View and manage selected items in the cart, including removing items if necessary.
+Order Confirmation: Pay for your order securely using Stripe.
+Transaction History: View all past transactions and payment history.
+Dark Mode: Toggle between light and dark themes for better user experience.
+Tech Stack
+Frontend: React.js
+Backend: Node.js, Express.js
+Database: MongoDB
+Authentication: JSON Web Token (JWT)
+Payment Gateway: Stripe
+UI Styling: CSS, Tailwind (or any other framework you've used)
+State Management: React Hooks / Context API / Redux (specify the one used)
